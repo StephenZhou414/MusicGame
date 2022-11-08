@@ -8,33 +8,36 @@ public class LevelPath : MonoBehaviour
     private Transform[] waypoints;
     private LineRenderer lr;
 
-    [SerializeField]
-    private float moveSpeed = 2f;
+    private float speed;
 
     private int waypointIndex = 1;
     private GameObject player;
     private bool followPath = false;
-    private void Start()
+
+    public void PaintPath()
     {
         waypoints = transform.GetComponentsInChildren<Transform>();
         lr = GetComponent<LineRenderer>();
         lr.positionCount = waypoints.Length - 1;
         for (int i = 1; i < waypoints.Length; i++)
         {
-            Debug.Log(waypoints[i].gameObject.name);
-            lr.SetPosition(i-1, waypoints[i].position);
+            lr.SetPosition(i - 1, waypoints[i].position);
         }
-        
     }
 
-    public void BeginPath(GameObject p)
+    public void BeginPath(GameObject p, int speed)
     {
         player = p;
-        Debug.Log("Initial pos: " + waypoints[waypointIndex].transform.position);
-        player.transform.position = waypoints[waypointIndex].transform.position;
-        Debug.Log("Player pos: " + player.transform.position);
+        this.speed = speed;
+        
+        player.transform.position = waypoints[waypointIndex].position;
         followPath = true;
 
+    }
+
+    public Transform GetLastPoint()
+    {
+        return waypoints[waypoints.Length - 1];
     }
 
     // Update is called once per frame
@@ -54,7 +57,7 @@ public class LevelPath : MonoBehaviour
         {
             player.transform.position = Vector2.MoveTowards(player.transform.position,
                waypoints[waypointIndex].transform.position,
-               moveSpeed * Time.deltaTime);
+               speed * Time.deltaTime);
 
             if (player.transform.position == waypoints[waypointIndex].transform.position)
             {
@@ -62,6 +65,10 @@ public class LevelPath : MonoBehaviour
             }
         }
         else
+        {
             followPath = false;
+            //trigger event
+            Level.current.LastPointOfPath();
+        }
     }
 }

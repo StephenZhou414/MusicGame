@@ -7,32 +7,33 @@ public class PathFollower : MonoBehaviour
     private LevelPath[] paths;
     private int selectedIndex;
     private LevelPath selectedPath;
-    private GameObject playerRef;
-    // Start is called before the first frame update
-    void Start()
-    {
-        paths = GetComponentsInChildren<LevelPath>();
-        var rn = new System.Random();
-        int selectedIndex = rn.Next(paths.Length);
-        Debug.Log("Index: " + selectedIndex);
-        selectedPath = paths[selectedIndex];
-
-        //tmp
-        playerRef = GameObject.Find("Player");
-        BeginSelectedPath();
-
-    }
-
     // Update is called once per frame
     void Update()
     {
         
     }
 
-    public void BeginSelectedPath()
+    public void SelectAndBeginPath(GameObject player, int speed)
     {
-        selectedPath.BeginPath(playerRef);
+        //paint all possibilities
+        paths = GetComponentsInChildren<LevelPath>();
+        foreach (var lvlPath in paths)
+        {
+            lvlPath.PaintPath();
+        }
+        //Select one
+        var rn = new System.Random();
+        int selectedIndex = rn.Next(paths.Length);
+        selectedPath = paths[selectedIndex];
+        //Move through that one
+        selectedPath.BeginPath(player,speed);
     }
+
+    public Transform GetLastPoint()
+    {
+        return selectedPath.GetLastPoint();
+    }
+
 
 
 }
