@@ -7,6 +7,11 @@ public class PathFollower : MonoBehaviour
     private LevelPath[] paths;
     private int selectedIndex;
     private LevelPath selectedPath;
+    [SerializeField]
+    private AudioClip[] audios;
+
+    private AudioClip selectedClip;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +30,8 @@ public class PathFollower : MonoBehaviour
         var rn = new System.Random();
         int selectedIndex = rn.Next(paths.Length);
         selectedPath = paths[selectedIndex];
+        selectedClip = audios[selectedIndex];
+        AudioSource.PlayClipAtPoint(selectedClip, Camera.main.transform.position);
         //Move through that one
         selectedPath.BeginPath(player,speed);
     }
@@ -32,6 +39,11 @@ public class PathFollower : MonoBehaviour
     public Transform GetLastPoint()
     {
         return selectedPath.GetLastPoint();
+    }
+
+    public AudioClip GetSelectedClip()
+    {
+        return selectedClip;
     }
 
 

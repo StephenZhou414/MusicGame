@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1767982330056421077}
   - component: {fileID: 1767982330056421076}
   m_Layer: 0
-  m_Name: LvlBlock - trident
+  m_Name: Block_op5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11d918a289fb4a738359d730e17d1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 8300000, guid: 5393fc41e358e4fd98774d81a4aa284f, type: 3}
+  - {fileID: 8300000, guid: 5cdb3d80f55c9433e94d98ed8e7eaef9, type: 3}
+  - {fileID: 8300000, guid: 2bcd46e06d6724663a554b721daa1fdd, type: 3}
 --- !u!1 &2232947405099917016
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be90cebeed241afb1ea4572601efe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
 --- !u!120 &6332472831066603873
 LineRenderer:
   serializedVersion: 2
@@ -466,7 +469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be90cebeed241afb1ea4572601efe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
 --- !u!120 &8624101749315153027
 LineRenderer:
   serializedVersion: 2
@@ -618,7 +620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be90cebeed241afb1ea4572601efe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
 --- !u!120 &8624101749874370771
 LineRenderer:
   serializedVersion: 2

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/styles.uss?fileID=7433441132597879392&amp;guid=ce673d84065ea4b7e9a9b514e3fcfb44&amp;type=3#styles" />
+    <ui:VisualElement style="width: 100%; height: 100%;">
+        <ui:VisualElement style="align-items: center; position: absolute; bottom: 0; width: 100%; height: 25%; justify-content: center; flex-direction: row;">
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="op1" class="button" style="background-image: url(&apos;project://database/Assets/images/op1.png?fileID=2800000&amp;guid=950d3ba9d84604fac8d8e1aaa056acfc&amp;type=3#op1&apos;);" />
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="op2" class="button" style="background-image: url(&apos;project://database/Assets/images/op2.png?fileID=2800000&amp;guid=1c92fd98ea1f846098f0a0c8fe1c6006&amp;type=3#op2&apos;);" />
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="op3" class="button" style="background-image: url(&apos;project://database/Assets/images/op3.png?fileID=2800000&amp;guid=9ef3ed7722c1a49bda953f6486b32390&amp;type=3#op3&apos;);" />
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="op4" class="button" style="background-image: url(&apos;project://database/Assets/images/op4.png?fileID=2800000&amp;guid=062a5c5d694d741b59b6c08fb9dd5ab0&amp;type=3#op4&apos;);" />
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="op5" class="button" style="background-image: url(&apos;project://database/Assets/images/op5.png?fileID=2800000&amp;guid=201ec697b00b2435cb4d41b65d2ac21d&amp;type=3#op5&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
